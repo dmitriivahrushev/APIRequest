@@ -1,24 +1,18 @@
-# Проект SWAPI
+# SWAPI Project
 ![SWAPI](png/Image.jpg)
-В одной далёкой-далёкой галактике бушевали звёздные API... Стоп! Что-то тут не так, какие ещё такие API? 
-API — это сокращение от Application Programming Interface, а если по-русски, то программный интерфейс приложения. 
-Обычно под API инженеры данных подразумевают сайт, к которому можно обращаться по определённым правилам и который будет возвращать заранее оговорённый стандартный ответ.
-SWAPI, или Star Wars API — как раз такой пример. Он хранит информацию о персонажах, космических кораблях, планетах и других объектах, которые связаны со вселенной «Звёздных войн».
+In a galaxy far, far away, the star wars APIs were raging... Wait! Something's not right here, what are these APIs? API stands for Application Programming Interface, or in Russian, it means the application's program interface. Usually, when data engineers talk about API, they mean a website that can be accessed according to certain rules and will return a predetermined standard response. SWAPI, or Star Wars API, is just such an example. It stores information about characters, spaceships, planets, and other objects related to the "Star Wars" universe.
 
 ---
-Работа скрипта
+Script Operation
 --
+**Importing requests:** The requests library is used for sending HTTP requests.
+**From the pathlib module:** The Path class is utilized to work with files and directories.
+**The APIRequester Class:** Initializes an object with a base URL (base_url), so that all requests are performed relative to this address.The get() method sends GET requests to the specified path (tail_url) and returns the server's response. If an error occurs, it is handled through a try/except block.
+**Subclass SWRequester:** This class inherits from APIRequester. It implements additional methods for working with the Star Wars API.
 
-* **Импорт requests:** библиотека для отправки HTTP-запросов.
-Path из модуля pathlib: используется для работы с файлами и директориями.  
-* **Класс APIRequester:**
-Инициализирует объект с базовым URL-адресом (base_url), чтобы все запросы выполнялись относительно этого адреса.
-Метод get() отправляет GET-запросы к указанному пути (tail_url) и возвращает ответ сервера. Если возникает ошибка, она обрабатывается через блок try/except.
-* **Подкласс SWRequester:**
-Этот класс наследуется от APIRequester. В нем реализованы дополнительные методы для работы со Star Wars API.
-Метод get_sw_categories() запрашивает корневой путь API и извлекает доступные категории (например, "films", "people", "planets").
-Метод get_sw_info() запрашивает конкретную категорию и возвращает её содержимое.  
-* **Функция save_sw_data():**
-Создается папка data для хранения файлов.
-Для каждой категории выполняется запрос к API, результат сохраняется в отдельный текстовый файл в этой папке.
-Таким образом, этот скрипт позволяет взаимодействовать с API Star Wars, получать информацию по категориям и сохранять эти данные в файлы.
+The get_sw_categories() method queries the root path of the API and extracts available categories (e.g., "films," "people," "planets").
+The get_sw_info() method queries a specific category and returns its content.
+Function save_sw_data():
+A folder named data is created to store files.
+For each category, a request is made to the API, and the result is saved into separate text files in this folder.
+In summary, this script interacts with the Star Wars API, retrieves information by category, and saves the data into individual files.
