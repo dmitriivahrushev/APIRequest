@@ -19,3 +19,15 @@ Path из модуля pathlib: используется для работы с 
 Создается папка data для хранения файлов.
 Для каждой категории выполняется запрос к API, результат сохраняется в отдельный текстовый файл в этой папке.
 Таким образом, этот скрипт позволяет взаимодействовать с API Star Wars, получать информацию по категориям и сохранять эти данные в файлы.
+
+
+#### Pytest для проверки
+- `test_init[kwargs0]`
+- `test_init[kwargs1]`
+- `test_get[kwargs0]`
+- `test_get[kwargs1]`
+- `test_get_sw_info[kwargs0]`
+- `test_get_sw_info[kwargs1]`
+- `test_get_sw_categories[kwargs0]`
+- `test_get_sw_categories[kwargs1]`
+- `test_save_sw_data`
